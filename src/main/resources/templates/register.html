@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link href="css/login.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Register</title>
+</head>
+<body>
+	<h1>Create Your User Account</h1>
+	<div class="body"
+		th:style="'background-image:url(' + @{/images/register.png} + '); background-repeat: no-repeat, repeat; background-size: cover;'"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<h1><a th:href="@{/index}"><span>USA</span>Farmers<i>Grow all together</i></a>
+		</h1>
+	</div>
+	<div class="login">
+		<div class="body"></div>
+		<br>
+		<div class="login">
+			<form class="form-signin" action="#" th:action="@{/register}" th:object="${user}" method="post">
+				<input id="csrf.token" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> 
+					<p id="warning" style="color:red;"></p><br>
+					<input id="username" name="username" type="text" th:field="${user.username}" placeholder="Username" pattern=".{3,}" required title="3 characters minimum" /> 
+					<input id="password" name="password" type="password" th:field="${user.password}" placeholder="Password" pattern=".{8,20}" required title="8 to 20 characters" />
+				<div style="margin-top: 15px">
+					<input id="email" name="Email" type="text" th:field="${user.email}"	placeholder="e-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"	title="example@xmail.com" />
+				</div>
+				<div>
+					<input type="submit" value="Create My Account">
+				</div>
+			</form>
+			<div style="margin-top: 15px">
+				<p style="padding-left: 15px">Do you have an account? <strong><a th:href="@{/login}">SIGN IN</a></strong></p>
+			</div>
+		</div>
+	</div>
+	<!-- Check if Username is exists -->
+	<script type="text/javascript" src="/js/register.js"></script>
+</body>
+</html>

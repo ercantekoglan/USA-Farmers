@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<div th:replace="header::header"></div>
+<link href="css/nutrients.css" rel="stylesheet">
+</head>
+<body>
+	<nav th:replace="navbar :: navbar"></nav>
+	<div class="welcome" style="margin-top: 60px">
+		<div class="container">
+			<h2 class="nutrients_layout_head">
+				Agricultural <span>Discussion</span> Portal
+			</h2>
+			<div class="farmer_image">
+				<img src="images/1.png" alt=" " class="img-responsive">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<ul class="rules">
+			<li>No Spam / Advertising / Self-promote in the forums</li>
+			<li>Do not post copyright-infringing material</li>
+			<li>Do not post “offensive” posts</li>
+			<li>Do not cross post questions</li>
+			<li>Remain respectful of other members at all times</li>
+		</ul>
+	</div>
+	<button class="tablink" style="width: 25%; margin: 60px auto; display: grid;" onclick="window.location.href='/createmessage'">Create Post</button>
+	<div class="row">
+		<div style="text-align: center; margin: 15px" th:each="message : ${messages}">
+			<a th:href="@{discussionform/{messageId}(messageId=${message.messageId})}">
+				<button class="tablink" style="width: 100%;" th:text="${message.messageTitle}"></button>
+			</a>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer th:replace="footer :: footer"></footer>
+
+</body>
+<script src="js/bootstrap.js"></script>
+</html>

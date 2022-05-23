@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link href="css/login.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login</title>
+</head>
+<body>
+	<div class="body"
+		th:style="'background-image:url(' + @{/images/login.jpg} + '); background-repeat: no-repeat, repeat; background-size: cover;'"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<h1>
+			<a th:href="@{/index}"><span>USA</span>Farmers<i>Grow all together</i></a>
+		</h1>
+
+	</div>
+	<br>
+	<div class="login">
+
+		<div class="body"></div>
+
+
+		<br>
+		<div class="login">
+			<form class="form-signin" action="#" th:action="@{/login}"	method="post">
+				<!-- use param.error assuming FormLoginConfigurer#failureUrl contains the query parameter error -->
+				<div th:if="${param.error != null}" style="padding-left: 40px">
+					<p style="color: #C83616">Invalid Username or Password!</p>	<br>
+					<div th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}">
+						Reason: <span th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}"></span>
+					</div>
+				</div>
+				<!-- the configured LogoutConfigurer#logoutSuccessUrl is /login?logout and contains the query param logout -->
+				<div th:if="${param.logout != null}">You have been logged out.</div>
+				<input type="text" id="username" name="username" placeholder="Username" /> <input type="password" id="password"	name="password" placeholder="Password" />
+				<div>
+					<input type="submit" value="SIGN IN">
+				</div>
+			</form>
+			<div style="margin-top: 15px">
+				<p style="padding-left: 15px">
+					Don’t have an account? <strong><a th:href="@{/register}">SIGN UP NOW</a></strong>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

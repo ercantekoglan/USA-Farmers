@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head>
+</head>
+<body>
+	<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light">
+		<div class="banner">
+			<div class="container">
+				<div class="w3_agileits_banner_main_grid">
+					<div class="w3_agile_logo">
+						<h1>
+							<a th:href="@{/index}"><span>USA</span>Farmers<i>Grow all
+									together</i></a>
+						</h1>
+					</div>
+					<div class="agileits_w3layouts_menu">
+						<div class="shy-menu">
+							<a class="shy-menu-hamburger"> <span class="layer top"></span>
+								<span class="layer mid"></span> <span class="layer btm"></span>
+							</a>
+							<div class="shy-menu-panel">
+								<nav class="menu menu--horatio link-effect-8" id="link-effect-8">
+									<ul class="w3layouts_menu__list">
+										<li><a th:href="@{/index}">Home</a></li>
+										<li><a th:href="@{/nutrients}">Nutrient Knowledge</a></li>
+										<li><a th:href="@{/calculator}">Nutrient Calculator</a></li>
+										<li><a th:href="@{/discussionform}">Discussion</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="w3_banner_info">
+					<div class="w3_banner_info_grid">
+						<h3 class="test">I'm Planting A Tree To Teach Me To Gather
+							Strength From My Deepest Roots</h3>
+						
+						<ul>
+							<li><a sec:authorize="!isAuthenticated()"
+								th:href="@{/login}" class="w3l_contact">Login</a></li>
+							<li><a sec:authorize="!isAuthenticated()"
+								th:href="@{/register}" class="w3ls_more">Sign Up</a></li>
+							<li><a sec:authorize="hasRole('ADMIN')"
+								th:href="@{/adminpanel}" class="w3ls_more">Admin Panel</a></li>
+							<li><a sec:authorize="isAuthenticated()"
+								th:href="@{/profile}" class="w3l_contact">Profile</a></li>
+							<li>
+								<form sec:authorize="isAuthenticated()" th:action="@{/logout}"
+									th:method="post">
+									<a class="w3l_contact" type="">
+										<button type="submit"
+											style="background-color: transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; outline: none;">Sign
+											Out</button>
+									</a>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script th:inline="javascript">
+			$(function() {
+
+				initDropDowns($("div.shy-menu"));
+
+			});
+
+			function initDropDowns(allMenus) {
+
+				allMenus
+						.children(".shy-menu-hamburger")
+						.on(
+								"click",
+								function() {
+
+									var thisTrigger = jQuery(this), thisMenu = thisTrigger
+											.parent(), thisPanel = thisTrigger
+											.next();
+
+									if (thisMenu.hasClass("is-open")) {
+
+										thisMenu.removeClass("is-open");
+
+									} else {
+
+										allMenus.removeClass("is-open");
+										thisMenu.addClass("is-open");
+										thisPanel.on("click", function(e) {
+											e.stopPropagation();
+										});
+									}
+
+									return false;
+								});
+			}
+		</script>
+	</nav>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<div th:replace="header::header"></div>
+</head>
+<body>
+
+	<nav th:replace="navbar :: navbar"></nav>
+
+	<div class="welcome" style="margin-top: 60px">
+		<div class="container">
+			<h2 class="nutrients_layout_head">Agricultural <span>Nutrient</span> Knowledge</h2>
+			<div class="farmer_image">
+				<img src="images/1.png" alt=" " class="img-responsive">
+			</div>
+			<article>Nutrient management is an essential part of
+				sustainable agriculture. Twenty nutrients are recognized as needed
+				for good crop growth. Nitrogen, phosphorus, potassium, along with
+				sulfur, calcium, and magnesium, are called macronutrients because
+				plants need these in relatively large amounts. Plants also need
+				micronutrients such as boron, copper, manganese, molybdenum and zinc
+				to remain healthy. A soil with a pH of 6.0 to 7.0 with adequate soil
+				organic matter (about 2 to 4% in Georgia) will help supply many of
+				these nutrients; however, additional nitrogen, phosphorus and
+				potassium are usually needed for good yields.</article>
+			<br>
+			<article>Although nitrogen, phosphorus, potassium and other
+				nutrients are essential for good crop growth and yields, too much of
+				a good thing can have negative impacts. For example, excess nitrogen
+				can move as nitrate into groundwater and create drinking water
+				problems. Excess phosphorus can move into surface water and cause
+				algae blooms. Too much copper or zinc can cause poor crop growth.
+				Consequently, nutrient applications should be managed to maintain
+				adequate but not excessive concentrations.</article>
+			<br>
+			<article>
+				Nutrient management consists of several steps:<br> 1 - Testing
+				the soil to determine the nutrients needed<br> 2 - Determining
+				the recommended amounts of fertilizer needed to produce the desired
+				yields, <br> 3 - Accounting for nutrient inputs from other
+				sources such as legumes, manures, or composts, and <br> 4 -
+				Then applying the additional nutrients needed.
+			</article>
+		</div>
+	</div>
+
+	<div class="nutrients">
+		<div class="grid-container">
+			<div class="macronutrients">
+				<h3 class="nutrients_layout_head">Macro <span>Nutrients</span></h3><br>
+				<button id="N" class="tablink">N</button>
+				<button id="P" class="tablink">P</button>
+				<button id="K" class="tablink">K</button>
+			</div>
+			<div class="macronutrients">
+				<h3 class="nutrients_layout_head">Secondary <span>Nutrients</span></h3><br>
+				<button id="Mg" class="tablink">Mg</button>
+				<button id="S"  class="tablink">S</button>
+				<button id="Ca" class="tablink">Ca</button>
+			</div>
+			<div class="macronutrients">
+				<h3 class="nutrients_layout_head">Non-Fertilizer <span>Elements</span></h3><br>
+				<button id="H" class="tablink" >H</button>
+				<button id="C" class="tablink">C</button>
+				<button id="O" class="tablink">O</button>
+			</div>
+		</div>
+		<div class="micronutrients">
+				<h3 class="nutrients_layout_head">Non-Fertilizer <span>Elements</span></h3><br>
+				<button id="B"  style="width: 8%;" class="tablink">B</button>
+				<button id="Cl" style="width: 8%;" class="tablink">Cl</button>
+				<button id="Mn" style="width: 8%;" class="tablink">Mn</button>
+				<button id="Fe" style="width: 8%;" class="tablink">Fe</button>
+				<button id="Ni" style="width: 8%;" class="tablink">Ni</button>
+				<button id="Cu" style="width: 8%;" class="tablink">Cu</button>
+				<button id="Zn" style="width: 8%;" class="tablink">Zn</button>
+				<button id="Mo" style="width: 8%;" class="tablink">Mo</button>
+		</div>
+	</div>
+
+	<div class="shownutrients">
+		<div id="showNutrient">
+			<h3 id="title"></h3>
+			<article id="tabcontent" style="white-space: pre-line"></article>
+		</div>
+	</div>
+	
+	
+	<!-- footer -->
+	<footer th:replace="footer :: footer"></footer>
+	<!-- FETCH BUTTONS -->
+	<script type="text/javascript" src="/js/nutrients.js"></script>
+	<script type="text/javascript">document.getElementById("N").click();</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link href="css/login.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login</title>
+</head>
+<body>
+	<div class="body"
+		th:style="'background-image:url(' + @{/images/error.jpg} + '); background-repeat: no-repeat, repeat; background-size: cover;'"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<h1>
+			<a th:href="@{/index}"><span>Sorry </span> 404 - Page Not Found</a>
+		</h1>
+	</div>
+	
+
+</body>
+</html>
