@@ -1,4 +1,4 @@
-package com.usafarmers.farmers.service;
+package com.usafarmers.farmers.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.usafarmers.farmers.domain.User;
 import com.usafarmers.farmers.repository.UserRepository;
-import com.usafarmers.farmers.security.SecurityUser;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{

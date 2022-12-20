@@ -10,37 +10,28 @@
 <body>
 	<nav th:replace="navbar :: navbar"></nav>
 
-	<div class="welcome" style="margin-top: 60px">
+	<div class="welcome">
 		<div class="container">
-			<h2 class="nutrients_layout_head">
-				Admin <span>Management</span> Panel
+			<h2 class="agileits_w3layouts_head">
+				User <span>Management</span> Panel
+
 			</h2>
-			<div class="farmer_image">
+			<div class="w3_agile_image">
 				<img src="images/1.png" alt=" " class="img-responsive">
 			</div>
+
 		</div>
+			
 	</div>
+
+
 	<div class="container">
-		<ul class="rules">
-			<li>Admin can manage User activities</li>
-			<li>Admin can delete User</li>
-			<li>Admin can manage Messages - Post activities</li>
-			<li>Admin can delete inappropriate Messages</li>
-			<li>Admin can also manage - delete the comments inside the
-				Message</li>
-		</ul>
-	</div>
 
-	<hr>
-	<h2 style="text-align: center;">User Management Section</h2>
-	<div
-		style="display: flex; height: 60%; width: 100%; justify-content: center; align-items: center;">
-
-		<table class="displaycalculator" style="width: 50%">
+		<table class="table table-bordered table-hover text-center" >
 			<tr>
-				<th>Username</th>
-				<th>User Role</th>
-				<th>Action</th>
+				<th class="text-center">Username</th>
+				<th class="text-center">User Role</th>
+				<th class="text-center">Action</th>
 			</tr>
 			<tr th:each="user : ${users}">
 				<td><a th:href="@{/profile/{userId}(userId=${user.userId})}"
@@ -50,8 +41,8 @@
 					<form th:action="@{/adminpanel/{userId}/(userId = ${user.userId})}"
 						method="post">
 						<p>
-							<input type="submit" value="Delete"
-								style="border: 0; outline: none; background-color: white" />
+							<button type="submit" class="btn btn-danger">Delete
+										User</button>
 						</p>
 					</form>
 				</td>
@@ -60,17 +51,27 @@
 		</table>
 
 	</div>
-	<hr>
-	<h2 style="text-align: center;">Message - Post Management Section</h2>
+	<div class="welcome">
+		<div class="container">
+			<h2 class="agileits_w3layouts_head">
+				Message <span>Management</span> Panel
 
-	<div
-		style="display: flex; height: 80%; width: 100%; justify-content: center; align-items: center;">
+			</h2>
+			<div class="w3_agile_image">
+				<img src="images/1.png" alt=" " class="img-responsive">
+			</div>
 
-		<table class="displaycalculator" style="width: 50%">
+		</div>
+			
+	</div>
+
+<div class="container" style="margin-bottom: 5%">
+
+		<table id="profile" class="table table-bordered table-hover text-center">
 			<tr>
-				<th>Message Title</th>
-				<th>Username</th>
-				<th>Action</th>
+				<th class="text-center">Message Title</th>
+				<th class="text-center">Username</th>
+				<th class="text-center">Action</th>
 			</tr>
 			<tr th:each="message : ${messages}">
 				<td><a
@@ -84,8 +85,8 @@
 						th:action="@{/message/{messageId}/delete(messageId=${message.messageId})}"
 						method="post">
 						<p>
-							<input type="submit" value="Delete Message"
-								style="border: 0; outline: none; background-color: white" />
+							<button type="submit" class="btn btn-danger">Delete
+										Message</button>
 						</p>
 					</form>
 				</td>

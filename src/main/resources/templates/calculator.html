@@ -8,80 +8,134 @@
 <body>
 	<nav th:replace="navbar :: navbar"></nav>
 
-	<div class="welcome" style="margin-top: 60px">
+
+
+<div class="welcome">
 		<div class="container">
-			<h2 class="nutrients_layout_head">Agricultural <span>Nutrient</span> Management</h2>
-			<div class="farmer_image">
+			<h2 class="agileits_w3layouts_head">
+				Agricultural <span>Nutrient</span> Knowledge
+			</h2>
+			<div class="w3_agile_image">
 				<img src="images/1.png" alt=" " class="img-responsive">
 			</div>
-			<article>
-				Nutrient management is critical in order to increase or maintain crop yields on a single parcel of agricultural land.  To meet crop needs throughout a growing season soil fertility must be consistently high.  There are fourteen nutrients that are supplied to crops from soil and fertilizer sources.  Of these, 6 are generally considered macronutrients, while the rest are micronutrients.  Macronutrients are used in relatively larger amounts by the plant, however micronutrient deficiencies can be equally damaging to yield and profitability.
-			</article>
+			<div class="w3ls_news_grids">
+				<article>Nutrient management is critical in order to
+				increase or maintain crop yields on a single parcel of agricultural
+				land. To meet crop needs throughout a growing season soil fertility
+				must be consistently high. There are fourteen nutrients that are
+				supplied to crops from soil and fertilizer sources. Of these, 6 are
+				generally considered macronutrients, while the rest are
+				micronutrients. Macronutrients are used in relatively larger amounts
+				by the plant, however micronutrient deficiencies can be equally
+				damaging to yield and profitability.</article>
 			<br>
-			<article>
-				Soil testing is a critical component in determining those nutrients that are already available and those that may be in limited supply. Deficiencies will impact crop quality or yield and knowing these will assist in determining the amount and type of fertilizer required. Soil testing, however, is highly dependent on appropriate soil sampling on an individual field basis. Proper soil sampling guidelines can be accessed through online and through extension resources. Plant tissue analysis may also be used as a method for measuring nutrient levels of a plant during their growth. This analysis is a useful tool for growers looking to understand the effectiveness of their fertilization practices. Tissue analysis may also be appropriate for diagnosing certain production problems. Similar to soil testing, however, plant tissue analysis is only as good as the samples that are submitted. Proper plant tissue sampling guidelines are available online or from local extension advisers.
-			</article>
+			<article>Soil testing is a critical component in
+				determining those nutrients that are already available and those
+				that may be in limited supply. Deficiencies will impact crop quality
+				or yield and knowing these will assist in determining the amount and
+				type of fertilizer required. Soil testing, however, is highly
+				dependent on appropriate soil sampling on an individual field basis.
+				Proper soil sampling guidelines can be accessed through online and
+				through extension resources. Plant tissue analysis may also be used
+				as a method for measuring nutrient levels of a plant during their
+				growth. This analysis is a useful tool for growers looking to
+				understand the effectiveness of their fertilization practices.
+				Tissue analysis may also be appropriate for diagnosing certain
+				production problems. Similar to soil testing, however, plant tissue
+				analysis is only as good as the samples that are submitted. Proper
+				plant tissue sampling guidelines are available online or from local
+				extension advisers.</article>
 			<br>
-			<article>
-				Beyond accounting for adequate amounts of all essential plant nutrients, growers should be aware of a variety of other factors that will impact nutrient uptake and availability.  Soil chemical and physical properties, such as the parent material, texture, organic matter content, or permeability, will greatly impact the accessibility of certain nutrients for plant uptake.  Water content is also important because nutrients available to plants are dissolved in the soil solution.  Excess water, however, may deplete soil oxygen leading to an increased concentration of carbon dioxide. Soil pH is a measure of the acidity of the soil.  The pH can directly impact the concentration of certain mineral elements or their availability for crop uptake.  Soil acidification, or a decrease in the soil pH, may be caused by long-term fertilizer application and other crop management practices.  To account for this, growers may consider applying lime or other amendments to increase the soil pH.  For many crops a mid-level  pH allows for the most accessibility to nutrients, though specific recommendations for particular nutrients should be considered. Crops also have different pH requirements. This online resource can help growers meet specific guidelines while the graph below depicts general nutrient availability.
-			</article><br>
-			<article>
-				In addition to a lack of accessibility caused by environmental or soil conditions, some nutrients may be lost from a system due to leaching, volatilization, or runoff.  Nitrogen may be readily leached from an agricultural system.  These losses often occur with drainage after rain or irrigation events.  All three primary macronutrients and many secondary or micronutrients are also susceptible to the effects of runoff and erosion. Intense rain events may carry soil particles and adsorbed nutrients across the soil surface into streams or lakes.  Some nutrients, such as N, are also highly susceptible to volatilization.  This is the loss of a nutrient to the atmosphere after it has been transformed into a gaseous state.  Nutrients removed from a system with crop harvest should also be considered and can be calculated for specific crops using online tools.
-			</article>
-		</div>
-	</div>
-	<div class="row">
-		<div class="column left" style="margin: 150px 0px; padding: 5px 100px 5px 10px;">
-			<div style="text-align: center;"><br>
-				<input id="yieldGoal" type="number" style="margin-left: 75px;" placeholder="Enter yield goal" min="1" />
-					<select name="crops" id="crops" style="margin: 15px 0px;">
-						<option th:each="crop:${crops}" th:value="${crop.cropKey}" th:text="${crop.cropName.en}" />
-					</select> 
-				<input id="submit" type="submit" value="Submit" style="margin-left: 75px;">
+			<article>Beyond accounting for adequate amounts of all
+				essential plant nutrients, growers should be aware of a variety of
+				other factors that will impact nutrient uptake and availability.
+				Soil chemical and physical properties, such as the parent material,
+				texture, organic matter content, or permeability, will greatly
+				impact the accessibility of certain nutrients for plant uptake.
+				Water content is also important because nutrients available to
+				plants are dissolved in the soil solution. Excess water, however,
+				may deplete soil oxygen leading to an increased concentration of
+				carbon dioxide. Soil pH is a measure of the acidity of the soil. The
+				pH can directly impact the concentration of certain mineral elements
+				or their availability for crop uptake. Soil acidification, or a
+				decrease in the soil pH, may be caused by long-term fertilizer
+				application and other crop management practices. To account for
+				this, growers may consider applying lime or other amendments to
+				increase the soil pH. For many crops a mid-level pH allows for the
+				most accessibility to nutrients, though specific recommendations for
+				particular nutrients should be considered. Crops also have different
+				pH requirements. This online resource can help growers meet specific
+				guidelines while the graph below depicts general nutrient
+				availability.</article>
+			<br>
+			<article>In addition to a lack of accessibility caused by
+				environmental or soil conditions, some nutrients may be lost from a
+				system due to leaching, volatilization, or runoff. Nitrogen may be
+				readily leached from an agricultural system. These losses often
+				occur with drainage after rain or irrigation events. All three
+				primary macronutrients and many secondary or micronutrients are also
+				susceptible to the effects of runoff and erosion. Intense rain
+				events may carry soil particles and adsorbed nutrients across the
+				soil surface into streams or lakes. Some nutrients, such as N, are
+				also highly susceptible to volatilization. This is the loss of a
+				nutrient to the atmosphere after it has been transformed into a
+				gaseous state. Nutrients removed from a system with crop harvest
+				should also be considered and can be calculated for specific crops
+				using online tools.</article>
 			</div>
 		</div>
+	</div>
 
-		<div class="column right">
-
-			<table id="displaycalculator">
-				<tr>
-					<td id="title" colspan="2">Crop</td>
-				</tr>
-				<tr>
-					<td id="goal" colspan="2">Yield / Goal</td>
-				</tr>
-				<tr>
-					<td id="yieldUnit" colspan="2">Yield Unit</td>
-				</tr>
-				<tr>
-					<td id="nutrientString"><u>Nutrient</u></td>
-					<td id="removal"><u>Removal, kg/ha</u></td>
-				</tr>
-				<tr>
-					<td id="n">N</td>
-					<td id="nnutrientvalue">--</td>
-				</tr>
-				<tr>
-					<td id="p2">P2O5</td>
-					<td id="p2nutrientvalue">--</td>
-				</tr>
-				<tr>
-					<td id="k2">K2O</td>
-					<td id="k2nutrientvalue">--</td>
-				</tr>
-				<tr>
-					<td id="s">S</td>
-					<td id="snutrientvalue">--</td>
-				</tr>
-				<tr>
-					<td id="p">P</td>
-					<td id="pnutrientvalue">--</td>
-				</tr>
-				<tr>
-					<td id="k">K</td>
-					<td id="knutrientvalue">--</td>
-				</tr>
-			</table>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6" style="margin-top: 10rem;">
+				 <input id="yieldGoal" type="number" placeholder="Enter yield goal" min="1" />
+				<select class="form-select" name="crops" id="crops" style="margin: 15px 0px; width:auto;">
+					<option th:each="crop:${crops}" th:value="${crop.cropKey}" th:text="${crop.cropName.en}" />
+				</select> <br>
+				<input id="submit" type="submit" value="Submit"	 style="margin: 15px 0px;">
+			</div>
+			<div class="col-md-6 table-responsive">
+				<table id="displaycalculator" class="table table-bordered table-hover text-center">
+					<tr>
+						<td id="title" colspan="2">Crop</td>
+					</tr>
+					<tr>
+						<td id="goal" colspan="2">Yield / Goal</td>
+					</tr>
+					<tr>
+						<td id="yieldUnit" colspan="2">Yield Unit</td>
+					</tr>
+					<tr>
+						<td id="nutrientString"><u>Nutrient</u></td>
+						<td id="removal"><u>Removal, kg/ha</u></td>
+					</tr>
+					<tr>
+						<td id="n">N</td>
+						<td id="nnutrientvalue">--</td>
+					</tr>
+					<tr>
+						<td id="p2">P2O5</td>
+						<td id="p2nutrientvalue">--</td>
+					</tr>
+					<tr>
+						<td id="k2">K2O</td>
+						<td id="k2nutrientvalue">--</td>
+					</tr>
+					<tr>
+						<td id="s">S</td>
+						<td id="snutrientvalue">--</td>
+					</tr>
+					<tr>
+						<td id="p">P</td>
+						<td id="pnutrientvalue">--</td>
+					</tr>
+					<tr>
+						<td id="k">K</td>
+						<td id="knutrientvalue">--</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.usafarmers.farmers.domain.User;
 import com.usafarmers.farmers.service.AddressService;
 import com.usafarmers.farmers.service.AutorityService;
-import com.usafarmers.farmers.service.DiscussionService;
+import com.usafarmers.farmers.service.MessageService;
 import com.usafarmers.farmers.service.UserService;
 
 @Controller
@@ -25,10 +25,18 @@ public class UserController {
 	@Autowired
 	private AddressService addresService;
 	@Autowired
-	private DiscussionService discussionService;
+	private MessageService discussionService;
 	@Autowired
 	private AutorityService authService;
 
+	
+	//display index page
+		@GetMapping("/index")
+		public String getIndex(ModelMap model) {
+			model.put("messages", discussionService.findAll());
+			return "index";
+		}
+	
 	@GetMapping("/")
 	public String welcomeRedirect() {
 		return "redirect:/index";
@@ -46,7 +54,7 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	// display register page
+	// if registered - redirect to display register page
 	@GetMapping("/register")
 	public String getCreateUser(ModelMap model) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -58,7 +66,7 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	// save registered user
+	// create new user
 	@PostMapping("/register")
 	public String postCreateUser(User user) {
 		userService.saveUser(user);
@@ -73,7 +81,7 @@ public class UserController {
 		return (user != null);
 	}
 
-	// display profile page
+	// display user profile page
 	@GetMapping("/profile")
 	public String getProfile(ModelMap model) {
 		User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

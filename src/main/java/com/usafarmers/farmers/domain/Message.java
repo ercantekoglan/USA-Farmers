@@ -7,6 +7,7 @@ import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -72,7 +73,7 @@ public class Message {
 		this.messageTitle = messageTitle;
 	}
 
-	@OneToMany(mappedBy = "message", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "message", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
 	public List<Comment> getComments() {
 		return comments;
 	}

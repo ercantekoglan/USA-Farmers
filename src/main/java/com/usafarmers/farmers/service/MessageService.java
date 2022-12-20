@@ -1,6 +1,7 @@
 package com.usafarmers.farmers.service;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,7 +13,7 @@ import com.usafarmers.farmers.domain.User;
 import com.usafarmers.farmers.repository.MessageRepository;
 
 @Service
-public class DiscussionService {
+public class MessageService {
 
 	@Autowired
 	private MessageRepository messageRepo;
@@ -29,7 +30,9 @@ public class DiscussionService {
 	}
 
 	public List<Message> findAll() {
-		return messageRepo.findAll();
+		List<Message> findAll = messageRepo.findAll();
+		Collections.reverse(findAll);
+		return findAll;
 	}
 
 	public Message findById(Long id) {

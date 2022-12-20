@@ -22,7 +22,6 @@ public class NutrientService {
 	@Autowired
 	private NutrientRepository nutrientRepo;
 
-	private List<Nutrients> allNutrients = new ArrayList<>();
 
 	public List<Nutrients> loadNutrients() {
 
@@ -61,15 +60,13 @@ public class NutrientService {
 		return nutrientRepo.findByName(name);
 	}
 
-	public void allNutrients() {
-		allNutrients = loadNutrients();
-	}
 
 	public List<Nutrients> getNutrients() {
-		if (CollectionUtils.isEmpty(allNutrients)) {
-			allNutrients();
+		long count = nutrientRepo.count();
+		if (count == 0) {
+			loadNutrients();
 		}
-		return allNutrients;
+		return nutrientRepo.findAll();
 	}
 
 }

@@ -11,14 +11,14 @@ import com.usafarmers.farmers.domain.Comment;
 import com.usafarmers.farmers.domain.User;
 import com.usafarmers.farmers.service.AutorityService;
 import com.usafarmers.farmers.service.CommentService;
-import com.usafarmers.farmers.service.DiscussionService;
+import com.usafarmers.farmers.service.MessageService;
 import com.usafarmers.farmers.service.UserService;
 
 @Controller
 public class DiscussionController {
 
 	@Autowired
-	private DiscussionService discussionService;
+	private MessageService discussionService;
 	@Autowired
 	private UserService userService;
 	@Autowired
@@ -41,10 +41,18 @@ public class DiscussionController {
 	public String getMessage(ModelMap model, @PathVariable Long messageId) {
 		User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = userService.findById(loggedInUser.getUserId());
+		
+		//to display id based message
 		model.put("message", discussionService.findById(messageId));
+		//left bar list for messages
 		model.put("messages", discussionService.findAll());
+		
+		//to add new comment
 		model.put("newcomment", new Comment());
+		//list other comments
 		model.put("comments", commentService.findByMessageId(messageId));
+		
+		
 		model.put("loggedInUser", user);
 		model.put("userauthority", authService.findById(user.getUserId()));
 

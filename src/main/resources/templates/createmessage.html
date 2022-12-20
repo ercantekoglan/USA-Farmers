@@ -11,36 +11,75 @@
 <body>
 	<nav th:replace="navbar :: navbar"></nav>
 
-	<div class="welcome" style="margin-top: 60px">
-			<div class="container">
-			<h2 class="nutrients_layout_head">Discussion <span>Form</span> Rules</h2>
-			<div class="farmer_image">
+
+	<div class="welcome">
+		<div class="container">
+			<h2 class="agileits_w3layouts_head">
+				Discussion <span>Form</span>
+			</h2>
+			<div class="w3_agile_image">
 				<img src="images/1.png" alt=" " class="img-responsive">
 			</div>
+			<div class="w3ls_news_grids ">
+				<ul style="margin-left: 40%; margin-right: 20%; margin-bottom: -5%;">
+					<li>No Spam / Advertising / Self-promote in the forums</li>
+					<li>Do not post copyright-infringing material</li>
+					<li>Do not post “offensive” posts</li>
+					<li>Do not cross post questions</li>
+					<li>Be respectful of other members at all times</li>
+				</ul>
+
+			</div>
+
 		</div>
+
 	</div>
+
 	<div class="container">
-		<ul class="rules">
-			<li>No Spam / Advertising / Self-promote in the forums</li>
-			<li>Do not post copyright-infringing material</li>
-			<li>Do not post “offensive” posts</li>
-			<li>Do not cross post questions</li>
-			<li>Remain respectful of other members at all times</li>
-		</ul>
+
+
+		<div class="w3ls_news_grids">
+
+
+
+			<div class="agileits_w3layouts_news_grid">
+				<div class="postmessage">
+					<form th:action="@{/createmessage}" method="post">
+						<div style="margin-bottom: 15px">
+							<input class="input-group mb-3" type="text"
+								th:field="${message.messageTitle}" required
+								placeholder="Message Title" maxlength="50" />
+						</div>
+						<div>
+							<textarea class="form-control"
+								th:field="${message.messageContent}" required
+								style="resize: none;"
+								placeholder="Type your message content here..." rows="6"
+								cols="100"></textarea>
+						</div>
+						<div style="margin-left: 300px">
+							<button class="tablink" type="submit"
+								style="width: 25%; margin-top: 20px">Post Message</button>
+							<button class="tablink"
+								style="width: 25%; margin: 20px ;"
+								onclick="window.location.href='/discussionform'">Back
+								To Form</button>
+
+						</div>
+					</form>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div class="clearfix"></div>
 	</div>
-	<div class="postmessage">
-		<form th:action="@{/createmessage}" method="post">
-			<div style="margin-bottom: 15px">
-			 <input type="text" th:field="${message.messageTitle}" required placeholder="Message Title" maxlength="50"/>
-			</div>
-			<div>
-				<textarea th:field="${message.messageContent}" required style="resize: none;" placeholder="Type your message content here..." rows="6" cols="100"></textarea>
-			</div>
-			<div style="margin-left: 300px">
-				<button class="tablink" type="submit" style="width: 50%; margin-top: 20px" >Post Message</button>
-			</div>
-		</form>
-	</div>
+
+
+
+
 
 	<!-- footer -->
 	<footer th:replace="footer :: footer"></footer>

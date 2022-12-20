@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.usafarmers.farmers.domain.Message;
 import com.usafarmers.farmers.domain.User;
-import com.usafarmers.farmers.service.DiscussionService;
+import com.usafarmers.farmers.service.MessageService;
 import com.usafarmers.farmers.service.UserService;
 
 @Controller
 public class MessageController {
 
 	@Autowired
-	private DiscussionService messageService;
+	private MessageService messageService;
 	@Autowired
 	private UserService userService;
 	@Autowired
-	private DiscussionService discussionService;
+	private MessageService discussionService;
 
 	// display screen to create message page
 	@GetMapping("/createmessage")

@@ -1,6 +1,5 @@
 package com.usafarmers.farmers.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -30,7 +29,7 @@ public class Address {
 		this.userId = userId;
 	}
 
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@OneToOne()
 	@MapsId
 	@JoinColumn(name = "user_id")
 	public User getUser() {
@@ -91,5 +90,7 @@ public class Address {
 		return "Address [userId=" + userId + ", user=" + user + ", addressLine1=" + addressLine1 + ", addressLine2="
 				+ addressLine2 + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + "]";
 	}
+	
+	
 
 }

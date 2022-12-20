@@ -18,7 +18,6 @@ public class NutrientController {
 	//display nutrient knowledge page
 	@GetMapping("/nutrients")
 	public String getCreateUser(ModelMap model) {
-		nutrientFileService.getNutrients();
 		return "nutrients";
 	}
 

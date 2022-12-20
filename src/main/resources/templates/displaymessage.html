@@ -7,119 +7,139 @@
 <base href="/">
 <link href="css/nutrients.css" rel="stylesheet">
 <div th:replace="header::header"></div>
-<style>
-* {
-	box-sizing: border-box;
-}
 
-/* Create two unequal columns that floats next to each other */
-.column {
-	float: left;
-	padding: 10px;
-}
 
-.left {
-	width: 20%;
-}
-
-.right {
-	width: 78%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-	display: block;
-}
-</style>
 </head>
 <body>
 	<nav th:replace="navbar :: navbar"></nav>
-	<div class="welcome" style="margin-top: 60px">
+
+	<div class="welcome">
 		<div class="container">
-			<h2 class="nutrients_layout_head">Discussion <span>Form</span> Rules</h2>
-			<div class="farmer_image">
+			<h2 class="agileits_w3layouts_head">
+				Discussion <span>Form</span>
+			</h2>
+			<div class="w3_agile_image">
 				<img src="images/1.png" alt=" " class="img-responsive">
 			</div>
+			<div class="w3ls_news_grids ">
+				<ul style="margin-left: 40%; margin-right: 20%; margin-bottom: -5%;">
+					<li>No Spam / Advertising / Self-promote in the forums</li>
+					<li>Do not post copyright-infringing material</li>
+					<li>Do not post “offensive” posts</li>
+					<li>Do not cross post questions</li>
+					<li>Be respectful of other members at all times</li>
+				</ul>
+
+			</div>
+
 		</div>
+
 	</div>
 
-	<div class="container">
-		<ul
-			style="list-style-type: disc; padding-left: 400px; font-weight: bold;">
-			<li>No Spam / Advertising / Self-promote in the forums</li>
-			<li>Do not post copyright-infringing material</li>
-			<li>Do not post “offensive” posts</li>
-			<li>Do not cross post questions</li>
-			<li>Remain respectful of other members at all times</li>
-		</ul>
-	</div>
-	<div>
-		<button class="tablink" style="width: 25%; margin: 80px auto; display: grid;" onclick="window.location.href='/discussionform'">Back To Form</button>
-		<div class="row" style="padding: 5px 150px 5px 120px; margin: 15px 0px;">
-			<!--SHOW CREATED MESSAGES / POSTS TITLE -->
-			<div class="column left">
-				<div style="margin: 5px 0px;" th:each="message : ${messages}">
-					<b><a th:href="@{discussionform/{messageId}(messageId=${message.messageId})}">
-							<button class="tablink" style="width: 100%;white-space:pre;overflow:hidden; text-overflow: ellipsis;" th:text="${message.messageTitle}"></button>
-					</a></b>
-				</div>
+
+	<button class="tablink"
+		style="width: 25%; margin: 80px auto; display: grid;"
+		onclick="window.location.href='/discussionform'">Back To Form</button>
+
+
+	<div id="welcome_bottom" class="welcome-bottom">
+		<div class="col-md-3 wthree_welcome_bottom_left">
+			<div class="agileits_w3layouts_news_grid"
+				style="margin-bottom: 0.5rem;" th:each="message : ${messages}">
+				<h5>
+					<a class="text-muted"
+						th:href="@{discussionform/{messageId}(messageId=${message.messageId})}"
+						th:text="${message.messageTitle}"> </a>
+				</h5>
 			</div>
-			<div class="column right" style="padding: 5px 250px 5px 120px; margin: 15px 0px;">
-				<div style="text-align: left; margin: 5px;">
-					<div class="mainpost">
-						<div >
-							<h2 th:text="${message.messageTitle}"	style="  white-space: pre-line; width: 100%; word-wrap: break-word; "></h2>
-							<h4 th:text="${message.messageContent}"	style="padding: 50px;  white-space: pre-line; width: 100%; word-wrap: break-word; "></h4>
-							<div style="text-align: right; margin: 5px">
-								<strong><a th:href="@{/profile/{userId}(userId=${message.user.userId})}"  th:text="${message.user.username}"></a></strong>
-								<p class="date"	th:text="${#temporals.format(message.createdDate, 'dd-MM-yyyy HH:mm')}"></p>
-								  <div th:if="${loggedInUser.userId == message.user.userId OR userauthority.authority == 'ROLE_ADMIN'}">
-									<form th:action="@{/message/{messageId}/delete(messageId=${message.messageId})}" method="post">
-										<p>
-											<input type="submit" value="Delete Message"	style="border: 0; outline: none; background-color: white" />
-										</p>
-									</form>
-								  </div>
-							</div>
+
+			<div class="clearfix"></div>
+		</div>
+		<div class="col-md-9 wthree_welcome_bottom_right">
+
+
+			<div class="mainpost" style="margin-right: 5%;">
+				<div>
+					<h2 th:text="${message.messageTitle}"
+						style="white-space: pre-line; width: 50%; word-wrap: break-word; margin-left: 20%; margin-top: 5%"></h2>
+					<p th:text="${message.messageContent}"
+						style="margin-top: 5%; white-space: pre-line; width: 100%; word-wrap: break-word;"></p>
+					<div style="text-align: right; margin: 5px">
+						<strong><a class="text-muted"
+							th:href="@{/profile/{userId}(userId=${message.user.userId})}"
+							th:text="${message.user.username}"></a></strong>
+						<p class="date"
+							th:text="${#temporals.format(message.createdDate, 'dd-MM-yyyy HH:mm')}"></p>
+						<div
+							th:if="${loggedInUser.userId == message.user.userId OR userauthority.authority == 'ROLE_ADMIN'}">
+							<form
+								th:action="@{/message/{messageId}/delete(messageId=${message.messageId})}"
+								method="post">
+								<p>
+									<button type="submit" class="btn btn-danger">Delete
+										Message</button>
+
+								</p>
+							</form>
 						</div>
-						<hr	style="height: 3px; border-width: 0; color: gray; background-color: gray">
 					</div>
-					<div th:each="comment : ${comments}">
-						<div style="text-align: left; margin-top: 50px">
-							<div th:text="${comment.commentDetails}" style="white-space: pre-line; width: 100%; word-wrap: break-word;"></div>
-							<div style="text-align: right; margin: 5px">
-							<strong><a th:href="@{/profile/{userId}(userId=${comment.user.userId})}"  th:text="${comment.user.username}"></a></strong>
-							
-								<p class="date"	th:text="${#temporals.format(message.createdDate, 'dd-MM-yyyy HH:mm')}"></p>
-							
-								<div th:if="${loggedInUser.userId == comment.user.userId OR userauthority.authority == 'ROLE_ADMIN'}">
-									<form th:action="@{/message/{messageId}/comment/{commentId}delete/(messageId = ${message.messageId}, commentId=${comment.commentId})}" method="post">
-										
-										<p>
-											<input type="submit" value="Delete Comment"	style="border: 0; outline: none; background-color: white" />
-										</p>
-									</form>
+				</div>
+				<hr
+					style="height: 3px; border-width: 0; color: gray; background-color: gray">
+			</div >
+			<div th:each="comment : ${comments}" style="margin-right: 5%;">
+				<div style="text-align: left; margin-top: 50px">
+					<div th:text="${comment.commentDetails}"
+						style="white-space: pre-line; width: 100%; word-wrap: break-word;"></div>
+					<div style="text-align: right; margin: 5px">
+						<strong><a class="text-muted"
+							th:href="@{/profile/{userId}(userId=${comment.user.userId})}"
+							th:text="${comment.user.username}"></a></strong>
+
+						<p class="date"
+							th:text="${#temporals.format(message.createdDate, 'dd-MM-yyyy HH:mm')}"></p>
+
+						<div
+							th:if="${loggedInUser.userId == comment.user.userId OR userauthority.authority == 'ROLE_ADMIN'}">
+							<form
+								th:action="@{/message/{messageId}/comment/{commentId}delete/(messageId = ${message.messageId}, commentId=${comment.commentId})}"
+								method="post">
+
+								<p>
 									
-								</div>
+										<button type="submit" class="btn btn-danger">Delete
+										Comment</button>
+								</p>
+							</form>
 
-							</div>
-							<hr>
 						</div>
+
 					</div>
-					<div style="margin-left: 210px;">
-						<form th:action="@{discussionform/{messageId}(messageId = ${message.messageId})}" method="post">
-							<div>
-								<textarea th:field="${newcomment.commentDetails}" style="resize: none;" required placeholder="Type your comment here..." rows="4" cols="80"></textarea>
-							</div>
-							<div style="margin-left: 180px;">
-								<button class="tablink" type="submit" style="width: 50%; margin-top: 20px" th:text="Comment"></button>
-							</div>
-						</form>
-					</div>
+					<hr>
 				</div>
 			</div>
+			<div style="margin-left: 15%; margin-right: 25%; margin-bottom: 5%;">
+				<form style="margin-left: 5%; margin-right: 15%;"
+					th:action="@{discussionform/{messageId}(messageId = ${message.messageId})}"
+					method="post">
+					<div style="margin-left: 1%; margin-right: 15%;">
+						<textarea class="form-control" th:field="${newcomment.commentDetails}"
+							style="resize: none;" required
+							placeholder="Type your comment here..." rows="4" cols="80"></textarea>
+					</div>
+					<div style="margin-left: 25%; margin-right: 15%;">
+						<button class="tablink" type="submit"
+							style="width: 30%; margin-top: 20px" th:text="Comment"></button>
+					</div>
+				</form>
+			</div>
+
+
+			<div class="agileinfo_grid"></div>
 		</div>
+		<div class="clearfix"></div>
 	</div>
+
 
 	<!-- footer -->
 	<footer th:replace="footer :: footer"></footer>

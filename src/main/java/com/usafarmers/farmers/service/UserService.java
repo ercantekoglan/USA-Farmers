@@ -45,15 +45,11 @@ public class UserService {
 		user.getAuthorities().add(authority);
 		authority.setUser(user);
 
-		address.setAddressLine1("No Information");
-		address.setAddressLine2("No Information");
-		address.setCity("No Information");
-		address.setState("No Information");
-		address.setZipCode("No Information");
+		
 		address.setUser(user);
 		user.setAddress(address);
 		user.setPassword(encodedPassword);
-		user.setUserProduct("No Information");
+		
 		}
 		return userRepo.save(user);
 	}

@@ -1,76 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 <div th:replace="header::header"></div>
-<link href="css/nutrients.css" rel="stylesheet">
-
 </head>
+	
 
 <body>
-	<nav th:replace="navbar :: navbar"></nav>
-	<div class="col-md-4 agileits_banner_bottom_left">
-		<div class="agileinfo_banner_bottom_pos">
-			<div class="w3_agileits_banner_bottom_pos_grid">
+<!-- banner -->
+<nav th:replace="navbar :: navbar"></nav>
 
-				<div class="col-xs-8 wthree_banner_bottom_grid_right">
-					<h4>Free Consultation</h4>
-					<p>Find best consultants around you to get free community help.</p>
+<!-- banner-bottom -->
+	<div class="banner-bottom">
+		<div class="col-md-4 agileits_banner_bottom_left">
+			<div class="agileinfo_banner_bottom_pos">
+				<div class="w3_agileits_banner_bottom_pos_grid">
+					<div class="col-xs-4 wthree_banner_bottom_grid_left">
+						<div class="agile_banner_bottom_grid_left_grid hvr-radial-out">
+							<i class="fa fa-pagelines" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="col-xs-8 wthree_banner_bottom_grid_right">	
+						<h4>Free Consultation</h4>
+						<p>Best consultants around you to get free community help.</p>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="col-md-4 agileits_banner_bottom_left1">
-		<div class="agileinfo_banner_bottom_pos">
-			<div class="w3_agileits_banner_bottom_pos_grid">
-				<div class="col-xs-8 wthree_banner_bottom_grid_right">
-					<h4>Certified Products</h4>
-					<p>We all support our farmers on certified products.</p>
+		<div class="col-md-4 agileits_banner_bottom_left1">
+			<div class="agileinfo_banner_bottom_pos">
+				<div class="w3_agileits_banner_bottom_pos_grid">
+					<div class="col-xs-4 wthree_banner_bottom_grid_left">
+						<div class="agile_banner_bottom_grid_left_grid hvr-radial-out">
+							<i class="fa fa-certificate" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="col-xs-8 wthree_banner_bottom_grid_right">	
+						<h4>Certified Products</h4>
+						<p>We support our farmers with certified products.</p>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="col-md-4 agileits_banner_bottom_left2">
-		<div class="agileinfo_banner_bottom_pos">
-			<div class="w3_agileits_banner_bottom_pos_grid">
-				<div class="col-xs-8 wthree_banner_bottom_grid_right">
-					<h4>Free Helpline</h4>
-					<p>Use our community service to find your solutions.</p>
+		<div class="col-md-4 agileits_banner_bottom_left2">
+			<div class="agileinfo_banner_bottom_pos">
+				<div class="w3_agileits_banner_bottom_pos_grid">
+					<div class="col-xs-4 wthree_banner_bottom_grid_left">
+						<div class="agile_banner_bottom_grid_left_grid hvr-radial-out">
+							<i class="fa fa-yelp" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="col-xs-8 wthree_banner_bottom_grid_right">	
+						<h4>Free Helpline</h4>
+						<p>Use our community service to find your solutions.</p>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
+		<div class="clearfix"> </div>
 	</div>
+<!-- //banner-bottom -->
+<!---728x90--->
 
-
+<!-- welcome -->
 	<div class="welcome">
-		<div class="container"></div>
-	</div>
-	<div class="welcome" style="margin-top: 60px">
 		<div class="container">
-			<h2 class="nutrients_layout_head">Welcome <span>USA FARMERS</span> Community</h2>
-			<div class="farmer_image">
-				<img src="images/1.png" alt=" " class="img-responsive">
+			<h3 class="agileits_w3layouts_head">Welcome to our <span>Plantation</span></h3>
+			<div class="w3_agile_image">
+				<img src="images/1.png" alt=" " class="img-responsive" />
 			</div>
+			<p class="agile_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
+		</div>
+<!---728x90--->
+
+		<div class="mis-stage w3_agileits_welcome_grids"> 
+			<!-- The element to select and apply miSlider to - the class is optional -->
+			<ol class="mis-slider">
+				<li class="mis-slide"> 
+					<figure> 
+						<img src="images/a.png" alt=" " class="img-responsive" />
+						<figcaption>Strawberry</figcaption>
+					</figure>
+				</li>
+				<li class="mis-slide"> 
+					<figure> 
+						<img src="images/b.png" alt=" " class="img-responsive" />
+						<figcaption>Orange</figcaption>
+					</figure>
+				</li>
+				<li class="mis-slide"> 
+					<figure> 
+						<img src="images/c.png" alt=" " class="img-responsive" />
+						<figcaption>Pomegranates</figcaption>
+					</figure>
+				</li>
+				<li class="mis-slide"> 
+					<figure> 
+						<img src="images/d.png" alt=" " class="img-responsive" />
+						<figcaption>Lemon</figcaption>
+					</figure>
+				</li>
+				<li class="mis-slide"> 
+					<figure> 
+						<img src="images/e.png" alt=" " class="img-responsive" />
+						<figcaption>Apples</figcaption>
+					</figure>
+				</li>
+				<li class="mis-slide"> 
+					<figure> 
+						<img src="images/f.png" alt=" " class="img-responsive" />
+						<figcaption>Kiwi</figcaption>
+					</figure>
+				</li>
+			</ol>
 		</div>
 	</div>
-	<div style="padding: 10px 280px 80px 280px;">
-		<article>Agriculture has changed dramatically since the end
-			of World War II. Food and fiber productivity has soared due to new
-			technologies, mechanization, increased chemical use, specialization,
-			and government policies that favored maximizing production and
-			reducing food prices. These changes have allowed fewer farmers to
-			produce more food and fiber at lower prices.</article>
-		<br>
-		<article>Although these developments have had many positive
+<!-- //welcome -->
+<!-- welcome-bottom -->
+	<div id="welcome_bottom" class="welcome-bottom">
+		<div class="col-md-6 wthree_welcome_bottom_left">
+			<h3>we work hard and make our country <span>greenery</span></h3>
+			<p style="color:black">Agriculture has changed dramatically since the end
+				of World War II. Food and fiber productivity has soared due to new
+				technologies, mechanization, increased chemical use, specialization,
+				and government policies that favored maximizing production and
+				reducing food prices. These changes have allowed fewer farmers to
+				produce more food and fiber at lower prices.</p>
+			<p style="color:black">Although these developments have had many positive
 			effects and reduced many risks in farming, they also have significant
-			costs. Prominent among these are topsoil depletion, groundwater
+			costs. Prominent among these are top soil depletion, ground water
 			contamination, air pollution, greenhouse gas emissions, the decline
 			of family farms, neglect of the living and working conditions of farm
 			laborers, new threats to human health and safety due to the spread of
 			new pathogens, economic concentration in food and agricultural
-			industries, and disintegration of rural communities.</article>
-		<br>
-		<article>A growing movement has emerged during the past four
+			industries, and disintegration of rural communities.</p>
+		
+			<p style="color:black">A growing movement has emerged during the past four
 			decades to question the necessity of these high costs and to offer
 			innovative alternatives. Today this movement for sustainable
 			agriculture is garnering increasing support and acceptance within our
@@ -78,66 +148,117 @@
 			main goals – environmental health, economic profitability, and social
 			equity (Figure 1). A variety of philosophies, policies and practices
 			have contributed to these goals, but a few common themes and
-			principles weave through most definitions of sustainable agriculture.</article>
-		<br>
-		<article>Agricultural sustainability rests on the principle
-			that we must meet the needs of the present without compromising the
-			ability of future generations to meet their own needs. Therefore,
-			long-term stewardship of both natural and human resources is of equal
-			importance to short-term economic gain. Stewardship of human
-			resources includes consideration of social responsibilities such as
-			working and living conditions of laborers, the needs of rural
-			communities, and consumer health and safety both in the present and
-			the future. Stewardship of land and natural resources involves
-			maintaining or enhancing the quality of these resources and using
-			them in ways that allow them to be regenerated for the future.
-			Stewardship considerations must also address concerns about animal
-			welfare in farm enterprises that include livestock.</article>
-	</div>
-
-	<!-- //welcome -->
-	<div id="welcome_bottom" class="welcome-bottom">
+			principles weave through most definitions of sustainable agriculture.</p>
+			
+			<div class="clearfix"> </div>
+		</div>
 		<div class="col-md-6 wthree_welcome_bottom_right">
 			<div class="agileinfo_grid">
 				<figure class="agileits_effect_moses">
 					<img src="images/4.jpg" alt=" " class="img-responsive" />
 					<figcaption>
 						<h4>Plantation <span>For Future Growth</span></h4>
-						<p>When the practice of farming spread over the earth, mankind experienced its first population explosion.</p>
-					</figcaption>
+						<p>Nullam in luctus lectus. Mauris lobortis dui mauris, non vestibulum 
+							magna blandit at scelerisque tellus ipsum nec ipsum.</p>
+					</figcaption>			
 				</figure>
 			</div>
 		</div>
-		<div class="clearfix">
-		<br><br><br><br>
-		<h2 style="text-align: center; color:white;">We work together</h2><br><br>
-		<h2 style="text-align: center; color:white;">We produce together</h2><br><br>
-		<h2 style="text-align: center; color:white;">We harvest together</h2><br><br>
-		<h2 style="text-align: center; color:white;">We grow together</h2>
-		</div>
+		<div class="clearfix"> </div>
 	</div>
+<!-- //welcome-bottom -->
+
+<!-- news -->
 	<div class="welcome">
-		<div class="container"></div>
-	</div>
-	<div class="welcome" style="margin-top: 60px">
+	
 		<div class="container">
-			<h2 class="nutrients_layout_head">Active Posts on <span>Discussion Form</span></h2>
-			<div class="farmer_image">
-				<img src="images/1.png" alt=" " class="img-responsive">
+				
+			<h3 class="agileits_w3layouts_head">Active <span>Posts</span></h3>
+			<div class="w3_agile_image">
+				<img src="images/1.png" alt=" " class="img-responsive" />
+			</div>
+		
+			<div class="w3ls_news_grids">
+
+				<div class="col-4" style="margin-bottom: 2rem" th:each="message : ${messages}">
+					
+					<div class="agileits_w3layouts_news_grid">
+						
+						<h4><a th:href="@{discussionform/{messageId}(messageId=${message.messageId})}" th:text="${message.messageTitle}"></a></h4>
+						<p style="width: 80%; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;" th:text="${message.messageContent}"></p>
+						<ul class="text-right">
+							<li th:text="${#temporals.format(message.createdDate, 'dd-MM-yyyy')}"><i class="fa fa-calendar" aria-hidden="true"></i></li>
+							<li><i class="fa fa-user" aria-hidden="true"></i><a th:href="@{/profile/{userId}(userId=${message.user.userId})}" th:text="${message.user.username}"></a></li>
+						</ul>
+					</div>
+				</div>
+		
+				</div>
+			
+				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
+	
 
-	<div class="row">
-		<div style="text-align: center; margin-top:15px;"
-			th:each="message : ${messages}">
-			<h2><a th:href="@{discussionform/{messageId}(messageId=${message.messageId})}" th:text="${message.messageTitle}"></a></h2>
-			
-		</div>
-	</div>
 
+<!-- footer -->
 	<!-- footer -->
 	<footer th:replace="footer :: footer"></footer>
+<!-- //footer -->
+
+<!-- mislider -->
+	<script src="js/mislider.js" type="text/javascript"></script>
+	<script type="text/javascript">
+        jQuery(function ($) {
+            var slider = $('.mis-stage').miSlider({
+                //  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
+                stageHeight: 380,
+                //  Number of slides visible at one time. Options: false or positive integer. false = Fit as many as possible.  Default: 1
+                slidesOnStage: false,
+                //  The location of the current slide on the stage. Options: 'left', 'right', 'center'. Defualt: 'left'
+                slidePosition: 'center',
+                //  The slide to start on. Options: 'beg', 'mid', 'end' or slide number starting at 1 - '1','2','3', etc. Defualt: 'beg'
+                slideStart: 'mid',
+                //  The relative percentage scaling factor of the current slide - other slides are scaled down. Options: positive number 100 or higher. 100 = No scaling. Defualt: 100
+                slideScaling: 150,
+                //  The vertical offset of the slide center as a percentage of slide height. Options:  positive or negative number. Neg value = up. Pos value = down. 0 = No offset. Default: 0
+                offsetV: -5,
+                //  Center slide contents vertically - Boolean. Default: false
+                centerV: true,
+                //  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
+                navButtonsOpacity: 1,
+            });
+        });
+    </script>
+<!-- //mislider -->
+<!-- text-effect -->
+		<script type="text/javascript" src="js/jquery.transit.js"></script> 
+		<script type="text/javascript" src="js/jquery.textFx.js"></script> 
+		<script type="text/javascript">
+			$(document).ready(function() {
+					$('.test').textFx({
+						type: 'fadeIn',
+						iChar: 100,
+						iAnim: 1000
+					});
+			});
+		</script>
+
+
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+
+	<script src="js/bootstrap.js"></script>
 
 </body>
+
 </html>
